@@ -1,7 +1,11 @@
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Get the absolute path of the directory where the current script is located
+current_directory = os.path.dirname(os.path.abspath(__file__))
+# Add the current directory to the first position of sys.path
+if current_directory not in sys.path:
+    sys.path.insert(0, current_directory)
 
 import copy
 import torch
